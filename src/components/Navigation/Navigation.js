@@ -32,7 +32,6 @@ export default function Navbar() {
                             <div className={"items-center md:flex sm:mr-8" + (navbarOpen ? " flex" : " hidden")} id="example-navbar-danger">
                                 <div className="flex flex-col mt-5 md:flex-row md:mt-0 md:mx-1">
                                     <NavLink exact activeStyle={{color:"#00a8ee"}} className="my-1 text-lg leading-5 text-gray-100 dark:text-gray-200 hover:text-green-500 dark:hover:text-indigo-400  md:mx-4 md:my-0 hover:no-underline" to="/">Home</NavLink>
-                                    <NavLink exact activeStyle={{color:"#00a8ee"}} className="my-1 text-lg leading-5 text-gray-100 dark:text-gray-200 hover:text-green-500 dark:hover:text-indigo-400  md:mx-4 md:my-0 hover:no-underline" to="/blog">Blog</NavLink>
                                     <NavLink exact activeStyle={{color:"#00a8ee"}} className="my-1 text-lg leading-5 text-gray-100 dark:text-gray-200 hover:text-green-500 dark:hover:text-indigo-400  md:mx-4 md:my-0 hover:no-underline" to="/user">All User</NavLink>
                         
                                     <div className="mt-8 mb-6 md:mb-0 md:mt-0 ml-0 md:ml-7">

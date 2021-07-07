@@ -1,5 +1,7 @@
 import React, { Fragment,useState,useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
+import Navigation from '../Navigation/Navigation'
+import Footer from '../Footer/Footer'
 import axios from 'axios';
 
 function UserList() {
@@ -38,6 +40,7 @@ function UserList() {
 
         return (
             <Fragment>
+                <Navigation/>
                 <div className="antialiased font-sans bg-gray-200">
                     <div className="container mx-auto px-4 sm:px-8">
                         <div className="py-8">
@@ -130,6 +133,7 @@ function UserList() {
                         </div>
                     </div>
                 </div>
+                <Footer/>
             </Fragment>
         );
 }
