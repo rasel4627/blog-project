@@ -104,7 +104,7 @@ function SingleBlog(props) {
 								</div>
 								</div>
 							</div>
-						)}
+						)}  
 						</div>
 					</>
 					:
