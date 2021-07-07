@@ -4,6 +4,7 @@ import axios from 'axios';
 
 function Blog() {
 	const [ post, setPost ] = useState([]);
+	const [ allPost, setAllPost ] = useState(post.slice(0,30));
 	useEffect(() => {
 		axios.get('http://127.0.0.1:8000/AllPost')
 			.then((res) => {

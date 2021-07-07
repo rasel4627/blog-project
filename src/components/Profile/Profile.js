@@ -24,11 +24,13 @@ export default function Profile() {
 			.catch((err) => {
 				console.log(err);
 			});
+            
 	}, []);
 
     function deletePost(id) {
         fetch("http://127.0.0.1:8000/DeletePost/"+id);
-        history.push('/')
+        // history.push('/')
+        history.go();
       }
 
 

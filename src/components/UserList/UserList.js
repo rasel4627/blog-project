@@ -6,6 +6,7 @@ import axios from 'axios';
 
 function UserList() {
     const [user , setUser] = useState([])
+    const [searchItem , setSearchItem] = useState([])
     useEffect(()=>{
         axios.get('http://127.0.0.1:8000/AllUser')
             .then(res => {
@@ -65,8 +66,8 @@ function UserList() {
                                             </path>
                                         </svg>
                                     </span>
-                                    <input placeholder="Search"
-                                        className="appearance-none rounded-r rounded-l sm:rounded-l-none border border-gray-400 border-b block pl-8 pr-6 py-2 w-full bg-white text-sm placeholder-gray-400 text-gray-700 focus:bg-white focus:placeholder-gray-600 focus:text-gray-700 focus:outline-none" />
+                                    <input placeholder="Search..." onChange={(event) => {setSearchItem(event.target.value);}}
+                                        className="appearance-none rounded-r rounded-l sm:rounded-l-none border border-gray-400 border-b block pl-8 pr-6 py-2 w-full bg-white text-sm placeholder-gray-400 text-gray-700 focus:bg-white focus:placeholder-gray-600 focus:text-gray-700 focus:outline-none" type="text"/>
                                 </div>
                             </div>
                             <div className="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
@@ -89,7 +90,13 @@ function UserList() {
                                             </tr>
                                         </thead>
                                         <tbody>
-                                        {user.map((user)=>
+                                        {user.filter((val)=>{
+                                            if(searchItem == ""){
+                                                return val
+                                            }else if(val.name.toLowerCase().includes(searchItem.toLowerCase()) || val.email.toLowerCase().includes(searchItem.toLowerCase()) || val.website.toLowerCase().includes(searchItem.toLowerCase())){
+                                                return val
+                                            }
+                                        }).map((user)=>
                                             <tr>
                                                 <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                                                     <p className="text-blue-500 whitespace-no-wrap"><NavLink to={"/userdetails/"+user.id}>{user.name}</NavLink></p>

@@ -2,9 +2,11 @@ import React, { Fragment, useState, useEffect } from 'react';
 import Navigation from '../Navigation/Navigation'
 import Footer from '../Footer/Footer'
 import axios from 'axios';
+import { useHistory } from 'react-router-dom';
 
 function SingleBlog(props) {
 	const [comment , setComment] = useState("")
+	const history = useHistory();
 	let id = props.match.params.id;
 	const [ singlepost, setPost ] = useState([]);
 	useEffect(async ()=> {
@@ -29,6 +31,7 @@ function SingleBlog(props) {
             method: 'POST',
             body: formData, 
         });
+		history.go();
     }
 
 	const [allComment , setAllComment] = useState([])

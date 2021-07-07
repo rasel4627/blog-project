@@ -40,7 +40,7 @@ export default function Navbar() {
                                             <>
                                                 <NavLink exact activeStyle={{color:"#00a8ee"}} className="text-md font-semibold leading-5 text-gray-100 dark:text-gray-200 dark:hover:text-indigo-400 md:mx-0 md:my-0 hover:bg-green-700 hover:no-underline focus:outline-none border-2 border-green-500 rounded-lg shadow-lg px-3 py-1 mt-4 mb-8 md:mt-0 mr-5 md:mr-2" to="/profile">Profile</NavLink>
 
-                                                <NavLink onClick={LogOut} activeStyle={{color:"#00a8ee"}} className="text-md font-semibold leading-5 text-gray-100 dark:text-gray-200 dark:hover:text-indigo-400 md:mx-0 md:my-0 hover:bg-green-700 hover:no-underline focus:outline-none border-2 border-green-500 rounded-lg shadow-lg px-3 py-1 mt-4 mb-8 md:mt-0 mr-5 md:mr-2" to="/">Logout</NavLink>
+                                                <NavLink onClick={LogOut} className="text-md font-semibold leading-5 text-gray-100 dark:text-gray-200 dark:hover:text-indigo-400 md:mx-0 md:my-0 hover:bg-green-700 hover:no-underline focus:outline-none border-2 border-green-500 rounded-lg shadow-lg px-3 py-1 mt-4 mb-8 md:mt-0 mr-5 md:mr-2" to="/">Logout</NavLink>
                                             </>
                                             :
                                             <>
