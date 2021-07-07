@@ -2,8 +2,8 @@ import React, { Fragment, useState, useEffect } from 'react';
 import Navigation from '../Navigation/Navigation'
 import Footer from '../Footer/Footer'
 import axios from 'axios';
-import { NavLink } from 'react-router-dom';
-import {useHistory} from 'react-router-dom'
+import { NavLink, useHistory } from 'react-router-dom';
+import ReactPaginate from 'react-paginate';
 
 export default function Profile() {
     let profile = JSON.parse(localStorage.getItem('user'))
@@ -27,12 +27,18 @@ export default function Profile() {
             
 	}, []);
 
+    const [pageNumber, setPageNumber] = useState(0);
+    const userPerPage = 4
+    const pagesVisited = pageNumber * userPerPage
+    const pageCount = Math.ceil(myPost.length / userPerPage)
+    const changePage = ({ selected }) => {
+            setPageNumber(selected)
+    };
+
     function deletePost(id) {
         fetch("http://127.0.0.1:8000/DeletePost/"+id);
-        // history.push('/')
         history.go();
       }
-
 
     return (
         <Fragment>
@@ -74,7 +80,9 @@ export default function Profile() {
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                            {myPost.map((myPost) =>
+                                            {
+                                               myPost.slice(pagesVisited, pagesVisited + userPerPage)
+                                               .map((myPost) => 
                                                 <tr>
                                                     <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                                                         <div class="flex items-center">
@@ -100,6 +108,17 @@ export default function Profile() {
                                             </tbody>
                                         </table>
                                     </div>
+                                    <ReactPaginate
+                                    previousLabel={"Previous"}
+                                    nextLabel={"Next"}
+                                    pageCount={pageCount}
+                                    onPageChange={changePage}
+                                    containerClassName={"paginationBttns"}
+                                    previousLinkClassName={"previousBttn"}
+                                    nextLinkClassName={"nextBttn"}
+                                    disabledClassName={"paginationDisabled"}
+                                    activeClassName={"paginationActive"}
+                                  />
                                 </div>
                                     <div>
                                     </div>
