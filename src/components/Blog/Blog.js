@@ -14,33 +14,29 @@ function Blog() {
 			});
 	}, []);
 
-	const myView = post.map((post) => {
-		return (
-			<div className="blogs bg-white sm:rounded-md shadow-xl mb-6 sm:mb-0 md:mb-0 lg:mb-0">
-				<img src={'http://127.0.0.1:8000/' + post.image} className="sm:rounded-t-md h-72 w-full object-cover" />
-				<div className="p-5">
-					<h1 className="text-2xl font-bold text-green-800 py-2">{post.title.substring(0, 28)}...</h1>
-					<p className="bg-white text-sm text-black">{post.description.substring(0, 350)}</p>
-					<NavLink
-						to={'/blogdetails/'+post.id}
-						className="py-2 px-3 mt-4 px-6 text-white bg-green-500 hover:bg-green-800 inline-block rounded"
-					>
-						Read More
-					</NavLink>
-				</div>
-			</div>
-		);
-	});
-
 	return (
 		<Fragment>
 			<div className="mx-auto bg-gray-500 dark:bg-gray-700 sm:p-1 md:p-4 lg:p-12">
 				<h1 className="items-center justify-center font-bold text-center text-2xl sm:text-4xl p-6 text-white sm:p-8 md:pb-10 lg:pb-14 lg:pb-14">
-					Our Articles
+					All Blog Post
 				</h1>
 				<div className="flex items-center justify-center mb-0 sm:mb-10 md:mb-6 lg:mb-10">
 					<div className="grid sm:gap-2 md:gap-4 lg:gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3">
-						{myView}
+					{post.map((post) =>
+						<div className="blogs bg-white sm:rounded-md shadow-xl mb-6 sm:mb-0 md:mb-0 lg:mb-0">
+							<img src={'http://127.0.0.1:8000/' + post.image} className="sm:rounded-t-md h-72 w-full object-cover" />
+							<div className="p-5">
+								<h1 className="text-2xl font-bold text-green-800 py-2">{post.title.substring(0, 28)}...</h1>
+								<p className="bg-white text-sm text-black">{post.description.substring(0, 350)}</p>
+								<NavLink
+									to={'/blogdetails/'+post.id}
+									className="py-2 px-3 mt-4 px-6 text-white bg-green-500 hover:bg-green-800 inline-block rounded"
+								>
+									Read More
+								</NavLink>
+							</div>
+						</div>
+					)}
 					</div>
 				</div>
 

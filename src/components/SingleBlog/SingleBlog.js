@@ -49,25 +49,28 @@ function SingleBlog(props) {
 			 {singlepost.map((singlepost) =>
 				<div class="max-w-screen-xl mx-auto">
 					<main class="mt-10 mb-12">
-						<div class="mb-4 md:mb-0 w-full mx-auto relative">
+						<div class="flex flex-col lg:flex-row lg:space-x-12">
+							<div class="px-4 lg:px-0 text-gray-700 text-md sm:text-lg leading-relaxed w-full ">
+								<h1 className="items-center justify-center font-bold text-center text-2xl sm:text-4xl mb-7 text-gray-700 ">Blog Details</h1>
+							</div>
+						</div>
+						<div class="mb-2 md:mb-0 w-full mx-auto relative">
+							<img src={'http://127.0.0.1:8000/' + singlepost.image} class="w-full imgHeight object-cover lg:rounded"/>
 							<div class="px-4 lg:px-0">
-								<h2 class="text-lg sm:text-2xl md:text-4xl font-semibold text-gray-800 leading-tight mb-4">
+								<h2 class="text-lg sm:text-2xl md:text-4xl font-bold text-gray-800 leading-tight mt-5">
 								{singlepost.title}
 								</h2>
 							</div>
-							<img src={'http://127.0.0.1:8000/' + singlepost.image} class="w-full imgHeight object-cover lg:rounded"/>
 						</div>
 				
 						<div class="flex flex-col lg:flex-row lg:space-x-12">
 					
-							<div class="px-4 lg:px-0 mt-12 text-gray-700 text-md sm:text-lg leading-relaxed w-full ">
+							<div class="px-4 lg:px-0 mt-8 text-gray-700 text-md sm:text-lg leading-relaxed w-full ">
 								<p class="pb-6">
 								{singlepost.description}
 								</p>
 							</div>
 						</div>
-
-						
 					{
                     localStorage.getItem('user')?
 					<>
@@ -91,9 +94,9 @@ function SingleBlog(props) {
 
 						
 						<div class="antialiased  max-w-screen-sm p-5">
-							<h3 class="mb-4 text-lg font-semibold text-gray-900 ml-5">Comments</h3>
+							<h3 class="mb-4 text-lg font-semibold text-gray-900">Comments</h3>
 						{allComment.map((allComment) =>
-							<div class="space-y-4 mb-3 bg-gray-100 p-3 rounded-lg">
+							<div class="space-y-4 mb-1 bg-gray-100 p-3 rounded-lg">
 								<div class="flex ">
 								<div class="flex-shrink-0 mr-3 ">
 									<img class="mt-2 rounded-full w-8 h-8 sm:w-12 sm:h-12" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxmV8iY2AoANKaZio717sqf4VzHhluWrAeYw&usqp=CAU" alt=""/>

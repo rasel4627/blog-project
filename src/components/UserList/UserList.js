@@ -17,27 +17,6 @@ function UserList() {
             })
     },[])
 
-            const myView = user.map(user=>{
-            return  <tr>
-                        <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                            <p className="text-blue-500 whitespace-no-wrap"><NavLink to={"/userdetails/"+user.id}>{user.name}</NavLink></p>
-                        </td>
-                        <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                            <p className="text-gray-900 whitespace-no-wrap">
-                            {user.email}
-                            </p>
-                        </td>
-                        <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                            <span
-                                className="relative inline-block px-3 py-1 font-semibold text-orange-900 leading-tight">
-                                <span aria-hidden
-                                    className="absolute inset-0 bg-orange-200 opacity-50 rounded-full"></span>
-                                <span className="relative">{user.website}</span>
-                            </span>
-                        </td>
-                    </tr>
-        })
-
         return (
             <Fragment>
                 <Navigation/>
@@ -45,7 +24,7 @@ function UserList() {
                     <div className="container mx-auto px-4 sm:px-8">
                         <div className="py-8">
                             <div>
-                                <h2 className="text-2xl font-semibold leading-tight">Users</h2>
+                                <h2 className="text-2xl font-semibold leading-tight">All Users</h2>
                             </div>
                             <div className="my-2 flex sm:flex-row flex-col">
                                 <div className="flex flex-row mb-1 sm:mb-0">
@@ -110,9 +89,26 @@ function UserList() {
                                             </tr>
                                         </thead>
                                         <tbody>
-
-                                            {myView}
-
+                                        {user.map((user)=>
+                                            <tr>
+                                                <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                                    <p className="text-blue-500 whitespace-no-wrap"><NavLink to={"/userdetails/"+user.id}>{user.name}</NavLink></p>
+                                                </td>
+                                                <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                                    <p className="text-gray-900 whitespace-no-wrap">
+                                                    {user.email}
+                                                    </p>
+                                                </td>
+                                                <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                                    <span
+                                                        className="relative inline-block px-3 py-1 font-semibold text-orange-900 leading-tight">
+                                                        <span aria-hidden
+                                                            className="absolute inset-0 bg-orange-200 opacity-50 rounded-full"></span>
+                                                        <span className="relative">{user.website}</span>
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                        )}
                                         </tbody>
                                     </table>
                                     <div

@@ -1,10 +1,10 @@
- export default function AppUrl(){
-     BaseUrl = 'http://127.0.0.1:8000/';
-     AllUser = this.BaseUrl+'/AllUser';
-     UserLogin = this.BaseUrl+'/UserLogin';
-     UserReg = this.BaseUrl+'/UserReg';
-     SingleUser = this.BaseUrl+'/SingleUser/';
-     AllPost = this.BaseUrl+'/AllPost';
-     StorePost = this.BaseUrl+'/StorePost';
-     PostDetails = this.BaseUrl+'/PostDetails';
-}
+//  export default function AppUrl(){
+//      BaseUrl = 'http://127.0.0.1:8000/';
+//      AllUser = BaseUrl+'/AllUser';
+//      UserLogin = BaseUrl+'/UserLogin';
+//      UserReg = BaseUrl+'/UserReg';
+//      SingleUser = BaseUrl+'/SingleUser/';
+//      AllPost = BaseUrl+'/AllPost';
+//      StorePost = BaseUrl+'/StorePost';
+//      PostDetails = this.BaseUrl+'/PostDetails';
+// }

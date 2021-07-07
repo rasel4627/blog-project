@@ -48,7 +48,7 @@ export default function Profile() {
                             <p className="text-center text-sm text-blue-500 font-medium"><span className="text-gray-500">Website:</span> {website}</p>
 
                                 <div className="flex justify-evenly mt-7 mb-2">
-                                    <p className="bg font-bold text-xl text-gray-700 w-full text-center py-3">My All Blog <span className="ml-5 text-white px-1 py-2 text-lg rounded-lg font-semibold transition duration-700 ease-in-out focus:outline-none tracking-wider px-3 lg:px-3 bg-blue-500 hover:bg-blue-800 shadow-lg"><NavLink to="/addPost">Add Blog</NavLink></span></p>
+                                    <p className="bg font-bold text-xl text-gray-700 w-full text-center py-3">All Blog <span className="ml-5 text-white px-1 py-2 text-lg rounded-lg font-semibold transition duration-700 ease-in-out focus:outline-none tracking-wider px-3 lg:px-3 bg-blue-500 hover:bg-blue-800 shadow-lg"><NavLink to="/addPost">Add Blog</NavLink></span></p>
                                 </div>
 
                                 <div className="w-full bg-white">
@@ -94,19 +94,16 @@ export default function Profile() {
 	                                                    <a title="Delete" onClick={() => deletePost(myPost.id)} class="text-lg md:text-xl text-red-500 btn-sm" id="delete"><i class="fa fa-trash"></i></a>
                                                     </td>
                                                 </tr>
-                                            )}
-                                               
+                                            )}  
                                             </tbody>
                                         </table>
                                     </div>
                                 </div>
                                     <div>
-                                    
                                     </div>
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
                 <Footer />
