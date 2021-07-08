@@ -11,14 +11,12 @@ function LoginForm() {
      
     useEffect(() => {
         if(localStorage.getItem("user")){
-            history.push('/')
+            history.push('/profile')
         }
     },[])
 
     async function login(){
         let item = {email,password}
-        console.warn(item)
-
         let result = await fetch("http://127.0.0.1:8000/UserLogin",{
             method: 'POST',
             headers: {
@@ -29,8 +27,13 @@ function LoginForm() {
         });
         
             result = await result.json()
-            localStorage.setItem("user",JSON.stringify(result))
-            history.push('/')    
+            if(result.length>0){
+                localStorage.setItem("user",JSON.stringify(result))
+                history.push('/profile')  
+            }else{
+                alert("Wrong Credential")
+                history.push('/login') 
+            } 
     }
 
     return(

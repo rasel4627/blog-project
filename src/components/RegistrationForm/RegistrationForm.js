@@ -12,7 +12,8 @@ function RegistrationForm() {
 
   async function signUp(){
     let item = {name,email,password,website}
-    let result = await fetch("http://127.0.0.1:8000/UserReg",{
+    if(item.name.length>0 && item.email.length>0 && item.password.length>0 && item.website.length>0){
+      let result = await fetch("http://127.0.0.1:8000/UserReg",{
       method: 'POST',
       body: JSON.stringify(item),
       headers: {
@@ -20,10 +21,13 @@ function RegistrationForm() {
         "Accept":'application/json'
        } 
     })
-
-    result = await result.json()
-    localStorage.setItem("user",JSON.stringify(result))
-    history.push('/')
+      result = await result.json()
+      localStorage.setItem("user",JSON.stringify(result))
+      history.push('/profile')  
+    }else{
+      alert("Please fill all the field")
+      history.push('/registration') 
+    }
   }
 
   return(

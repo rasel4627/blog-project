@@ -7,8 +7,11 @@
     }
     
 .paginationBttns a {
-    padding: 10px;
-    margin: 8px;
+    padding-left:12px;
+    padding-right:12px;
+    padding-top:6px;
+    padding-bottom:6px;
+    margin: 6px;
     border-radius: 5px;
     border: 1px solid #0d6efd;
     color: #000000;
